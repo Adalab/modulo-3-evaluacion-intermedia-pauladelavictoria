@@ -5,9 +5,11 @@ import "../style/App.css";
 
 function App() {
   const [adalabersData, setAdalabersData] = useState([]);
+  const [inputChange, setInputChange] = useState("");
   const [name, setName] = useState("");
   const [counselor, setCounselor] = useState("");
   const [speciality, setSpeciality] = useState("");
+  
 
   useEffect(() => {
     callToApi().then((response) => {
@@ -15,6 +17,15 @@ function App() {
     });
   }, []);
 
+
+  const handleFilter = (ev) => {
+    setInputChange(ev.currentTarget.value);
+  };
+
+ const filterAdalaberData = adalabersData.filter((adalaber) => 
+ adalaber.name.toLocaleLowerCase().includes(inputChange.toLowerCase()));
+
+ 
   const handleName = (ev) => {
     setName(ev.currentTarget.value);
   };
@@ -42,6 +53,15 @@ function App() {
   return (
     <div className="App">
       <h1>Adalabers</h1>
+      <label htmlFor="searchAdalaber">Nombre:</label>
+      <input
+      placeholder="Ej: MariCarmen"
+        type="text"
+        id="searchAdalaber"
+        name="searchAdalaber"
+        onChange={handleFilter}
+        value={inputChange}
+      />
       <table>
         <thead>
           <tr>
@@ -51,7 +71,7 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {adalabersData.map((adalaber, index) => (
+          {filterAdalaberData.map((adalaber, index) => (
             <tr key={index}>
               <td>{adalaber.name}</td>
               <td>{adalaber.counselor}</td>
