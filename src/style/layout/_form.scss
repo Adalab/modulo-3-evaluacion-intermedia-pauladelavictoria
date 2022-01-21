@@ -1,0 +1,63 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  padding: 50px;
+}
+
+.btn {
+background-color: rgb(23, 145, 139);
+color: white;
+font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  padding: 10px;
+  margin: 10px auto 150px 20px;
+  border-radius: 30px;
+}
+
+.title {
+  font-family: "Outfit", sans-serif;
+  margin-top: 45px;
+  margin-left: 25px;
+  color: rgb(23, 145, 139);
+}
+
+.inputsearch {
+  border: 1px rgb(0, 0, 7) solid;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  margin-top: 7px;
+  &_dos{
+   margin: 20px;
+    border: 1px rgb(0, 0, 7) solid;
+    border-radius: 30px;
+  }
+}
+
+::placeholder {
+  padding: 30px;
+}
+.label_dos{
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  margin-left: 20px;
+}
+.tabla {
+font-family: "Outfit", sans-serif;
+border: 1px  rgb(23, 145, 139) solid;
+margin: auto;
+
+
+&_el{
+    padding: 30px;
+    text-align: center;
+    border: 1px  rgb(23, 145, 139) solid;
+    &-container{
+        background-color: cadetblue;
+        color: white;
+    }
+}
+
+}
