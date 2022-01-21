@@ -10,7 +10,7 @@ function App() {
   const [counselor, setCounselor] = useState("");
   const [speciality, setSpeciality] = useState("");
   const [selCouncelor, setSelCounselor] = useState("");
-  const [redes, setRedes] = useState("");
+
   
 // FETCH
   useEffect(() => {
@@ -61,10 +61,7 @@ function App() {
     setCounselor("");
     setSpeciality("");
   };
-
-  // SOCIAL-Networks
-  const social = adalabersData.map((red) => (red.social_networks))
-  console.log(social);
+ 
 
   return (
     <div className="App">
